@@ -4,6 +4,7 @@ require('dotenv').config({ path: `.env.${process.env.NODE_ENV}` });
 
 const morgan = require('morgan');
 const helmet = require('helmet');
+const path = require('path'); // 添加这行
 const bodyParser = require('body-parser');
 const { notFound, errorHandler } = require('./middlewares');
 
@@ -14,9 +15,12 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 
 const employees = require('./routes/employees');
+const user = require('./routes/user');
 
+
+
+app.use('/api/user', user);
 app.use('/api/employees', employees);
-
 app.use(notFound);
 app.use(errorHandler);
 
