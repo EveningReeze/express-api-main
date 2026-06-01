@@ -1,0 +1,27 @@
+# Node modules
+node_modules
+npm-debug.log*
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Environment files
+.env
+.env.dev
+.env.prod
+
+# Docker
+.dockerignore
+Dockerfile
+
+# Git
+.git
+
+# Editor directories and files
+.vscode
